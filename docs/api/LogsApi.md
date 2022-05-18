@@ -30,9 +30,10 @@ const api_instance = new ionoscloud.LogsApi(config);
 api_instance
   .clusterLogsGet({
     clusterId: clusterId_example,
-    limit: 56,
     start: 2013-10-20T19:20:30+01:00,
-    end: 2013-10-20T19:20:30+01:00, 
+    end: 2013-10-20T19:20:30+01:00,
+    direction: direction_example,
+    limit: 56, 
     options: {}
   })
   .then((response) => console.log(response.data))
@@ -44,9 +45,10 @@ api_instance
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **clusterId** | **string** | The unique ID of the cluster. | [default to undefined] |
-| **limit** | **number** | The maximal number of log lines to return. | [optional][default to undefined] |
-| **start** | **string** | The start time for the query in RFC3339 format. | [optional][default to undefined] |
-| **end** | **string** | The end time for the query in RFC3339 format. | [optional][default to undefined] |
+| **start** | **string** | The start time for the query in RFC3339 format. Must not be more than 30 days ago but before the end parameter. The default is 30 days ago. | [optional][default to undefined] |
+| **end** | **string** | The end time for the query in RFC3339 format. Must not be greater than now. The default is the current timestamp. | [optional][default to undefined] |
+| **direction** | **&#39;BACKWARD&#39; | &#39;FORWARD&#39;** | The direction in which to scan through the logs. The logs are returned in order of the direction. | [optional][default to &#39;BACKWARD&#39;] |
+| **limit** | **number** | The maximal number of log lines to return.  If the limit is reached then log lines will be cut at the end (respecting the scan direction). | [optional][default to 100] |
 
 ### Return type
 

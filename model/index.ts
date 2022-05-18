@@ -1,5 +1,4 @@
 export * from './apiversion';
-export * from './backup-location';
 export * from './backup-metadata';
 export * from './backup-response';
 export * from './cluster-backup';
@@ -20,7 +19,6 @@ export * from './dbuser';
 export * from './day-of-the-week';
 export * from './error-message';
 export * from './error-response';
-export * from './location';
 export * from './maintenance-window';
 export * from './metadata';
 export * from './pagination';

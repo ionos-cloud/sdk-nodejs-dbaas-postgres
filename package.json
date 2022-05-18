@@ -1,6 +1,6 @@
 {
   "name": "@ionos-cloud/sdk-nodejs-dbaas-postgres",
-  "version": "v1.0.0",
+  "version": "1.0.1",
   "description": "NodeJS SDK for Psql DBaaS",
   "author": "Ionos",
   "keywords": [
