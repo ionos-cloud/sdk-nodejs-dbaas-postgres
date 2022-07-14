@@ -1,5 +1,5 @@
 # Node API Client For IONOS Cloud Dbaas Postgres
-[![[ CD ] DBaaS Postgres / Node](https://github.com/ionos-cloud/sdk-resources/actions/workflows/release-dbaas-postgres-node.yml/badge.svg)](https://github.com/ionos-cloud/sdk-resources/actions/workflows/release-dbaas-postgres-node.yml)
+[![[ CI ] DBaaS Postgres / Node](https://github.com/ionos-cloud/sdk-resources/actions/workflows/ci-dbaas-postgres-node.yml/badge.svg)](https://github.com/ionos-cloud/sdk-resources/actions/workflows/ci-dbaas-postgres-node.yml)
 
 # Overview
 An enterprise-grade Database is provided as a Service (DBaaS) solution that
