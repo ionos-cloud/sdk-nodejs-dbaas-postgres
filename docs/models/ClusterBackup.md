@@ -1,6 +1,6 @@
 # ClusterBackup
 
-a backup object
+A backup object.
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
@@ -9,5 +9,7 @@ a backup object
 | **version** | **string** | The PostgreSQL version this backup was created from. | [optional] [default to undefined] |
 | **isActive** | **boolean** | Whether a cluster currently backs up data to this backup. | [optional] [default to undefined] |
 | **earliestRecoveryTargetTime** | **string** | The oldest available timestamp to which you can restore. | [optional] [default to undefined] |
+| **size** | **number** | Size of all base backups including the wal size in MB. | [optional] [default to undefined] |
+| **location** | **string** | The S3 location where the backups will be stored. | [optional] [default to undefined] |
 
 
