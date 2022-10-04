@@ -20,8 +20,20 @@ npm i --save @ionos-cloud/sdk-nodejs-dbaas-postgres
 ```
 
 ## Usage
+Import the SDK using:
 
-```typescript
+```javascript
+const sdk = require('@ionos-cloud/sdk-nodejs-dbaas-postgres')
+```
+
+Or, if the import is done from an ES module, use:
+
+```javascript
+import * as sdk from '@ionos-cloud/sdk-nodejs-dbaas-postgres';
+```
+
+Usage example:
+```javascript
 const sdk = require('@ionos-cloud/sdk-nodejs-dbaas-postgres')
 
 const config = new sdk.Configuration({username: 'username_here', password: 'password_here'});
@@ -35,7 +47,7 @@ clustersApi.clustersGet().then((response) => console.log(response));
 
 The username and password or the authentication token can be manually specified when initializing the SDK client:
 
-```typescript
+```javascript
 const config = new sdk.Configuration({username: 'username_here', password: 'password_here'});
 const clustersApi = new sdk.ClustersApi(config);
 ```
@@ -46,10 +58,10 @@ Environment variables can also be used; the SDK uses the following variables:
 * IONOS\_PASSWORD - to specify the password
 * IONOS\_TOKEN - if an authentication token is being used
 
-In this case, the client configuration must be initialized using `NewConfigurationFromEnv()`
+In this case, the client configuration must be initialized using `fromEnv()`:
 
-```typescript
-client := new sdk.ClustersApi(sdk.NewConfigurationFromEnv())
+```javascript
+const client = new sdk.ClustersApi(sdk.Configuration.fromEnv());
 ```
 
 {% hint style="danger" %}
