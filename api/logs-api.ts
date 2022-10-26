@@ -67,7 +67,7 @@ export const LogsApiAxiosParamCreator = function (configuration?: Configuration)
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
                     ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarApiKeyValue;
             }
 
             if ((start === undefined) && (configuration !== undefined)) {
