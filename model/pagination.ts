@@ -23,14 +23,14 @@ import { PaginationLinks } from './pagination-links';
 export interface Pagination {
 
     /**
-     * The offset specified in the request (if none was specified, the default offset is 0) (not implemented yet). 
+     * The offset specified in the request (if none was specified, the default offset is 0). 
      * @type {number}
      * @memberof Pagination
      */
     offset?: number;
 
     /**
-     * The limit specified in the request (if none was specified, use the endpoint\'s default pagination limit) (not implemented yet, always return number of items). 
+     * The limit specified in the request (if none was specified, the default limit is 100). 
      * @type {number}
      * @memberof Pagination
      */
@@ -41,7 +41,7 @@ export interface Pagination {
      * @type {PaginationLinks}
      * @memberof Pagination
      */
-    _links?: PaginationLinks;
+    links?: PaginationLinks;
 }
 
 

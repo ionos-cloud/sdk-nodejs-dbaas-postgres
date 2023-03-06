@@ -11,7 +11,7 @@ All URIs are relative to *https://api.ionos.com/databases/postgresql*
 
 ## clusterBackupsGet
 
-> <ClusterBackupList> clusterBackupsGet(clusterId)
+> <ClusterBackupList> clusterBackupsGet(clusterId, opts)
 
 List backups of cluster
 
@@ -31,7 +31,10 @@ const api_instance = new ionoscloud.BackupsApi(config);
 // List backups of cluster
 api_instance
   .clusterBackupsGet({
-    clusterId: clusterId_example
+    clusterId: clusterId_example,
+    limit: 100,
+    offset: 200, 
+    options: {}
   })
   .then((response) => console.log(response.data))
   .catch((error) => console.log(error.response.data));
@@ -42,6 +45,8 @@ api_instance
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **clusterId** | **string** | The unique ID of the cluster. | [default to undefined] |
+| **limit** | **number** | The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination. | [optional][default to 100] |
+| **offset** | **number** | The first element to return. Use together with \&#39;limit\&#39; for pagination. | [optional][default to 0] |
 
 ### Return type
 
@@ -107,7 +112,7 @@ basicAuth, tokenAuth
 
 ## clustersBackupsGet
 
-> <ClusterBackupList> clustersBackupsGet
+> <ClusterBackupList> clustersBackupsGet(opts)
 
 List cluster backups
 
@@ -126,14 +131,21 @@ const config = new ionoscloud.Configuration({
 const api_instance = new ionoscloud.BackupsApi(config);
 // List cluster backups
 api_instance
-  .clustersBackupsGet()
+  .clustersBackupsGet({
+    limit: 100,
+    offset: 200
+    options: {}
+  })
   .then((response) => console.log(response.data))
   .catch((error) => console.log(error.response.data));
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **limit** | **number** | The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination. | [optional][default to 100] |
+| **offset** | **number** | The first element to return. Use together with \&#39;limit\&#39; for pagination. | [optional][default to 0] |
 
 ### Return type
 

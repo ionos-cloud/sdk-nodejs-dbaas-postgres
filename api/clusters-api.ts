@@ -210,11 +210,13 @@ export const ClustersApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Retrieves a list of PostgreSQL clusters.
          * @summary List clusters
+         * @param {number} [limit] The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+         * @param {number} [offset] The first element to return. Use together with \&#39;limit\&#39; for pagination.
          * @param {string} [filterName] Response filter to list only the PostgreSQL clusters that contain the specified name. The value is case insensitive and matched on the \&#39;displayName\&#39; field. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        clustersGet: async (filterName?: string, options: any = {}): Promise<RequestArgs> => {
+        clustersGet: async (limit?: number, offset?: number, filterName?: string, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/clusters`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
@@ -239,6 +241,20 @@ export const ClustersApiAxiosParamCreator = function (configuration?: Configurat
                     ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
                 localVarHeaderParameter["Authorization"] = "Bearer " + localVarApiKeyValue;
+            }
+
+            if ((limit === undefined) && (configuration !== undefined)) {
+                limit = configuration.getDefaultParamValue('limit');
+            }
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if ((offset === undefined) && (configuration !== undefined)) {
+                offset = configuration.getDefaultParamValue('offset');
+            }
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
             }
 
             if ((filterName === undefined) && (configuration !== undefined)) {
@@ -495,12 +511,14 @@ export const ClustersApiFp = function(configuration?: Configuration) {
         /**
          * Retrieves a list of PostgreSQL clusters.
          * @summary List clusters
+         * @param {number} [limit] The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+         * @param {number} [offset] The first element to return. Use together with \&#39;limit\&#39; for pagination.
          * @param {string} [filterName] Response filter to list only the PostgreSQL clusters that contain the specified name. The value is case insensitive and matched on the \&#39;displayName\&#39; field. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async clustersGet(filterName?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ClusterList>> {
-            const axiosArgs = await ClustersApiAxiosParamCreator(configuration).clustersGet(filterName, options);
+        async clustersGet(limit?: number, offset?: number, filterName?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ClusterList>> {
+            const axiosArgs = await ClustersApiAxiosParamCreator(configuration).clustersGet(limit, offset, filterName, options);
             return runRequest(axiosArgs, configuration);
         },
         /**
@@ -578,12 +596,14 @@ export const ClustersApiFactory = function (configuration?: Configuration, baseP
         /**
          * Retrieves a list of PostgreSQL clusters.
          * @summary List clusters
+         * @param {number} [limit] The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+         * @param {number} [offset] The first element to return. Use together with \&#39;limit\&#39; for pagination.
          * @param {string} [filterName] Response filter to list only the PostgreSQL clusters that contain the specified name. The value is case insensitive and matched on the \&#39;displayName\&#39; field. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        clustersGet(filterName?: string, options?: any): AxiosPromise<ClusterList> {
-            return ClustersApiFp(configuration).clustersGet(filterName, options).then((request) => request(axios, basePath));
+        clustersGet(limit?: number, offset?: number, filterName?: string, options?: any): AxiosPromise<ClusterList> {
+            return ClustersApiFp(configuration).clustersGet(limit, offset, filterName, options).then((request) => request(axios, basePath));
         },
         /**
          * Patch attributes of a PostgreSQL cluster.
@@ -666,6 +686,20 @@ export interface ClustersApiClustersFindByIdRequest {
  * @interface ClustersApiClustersGetRequest
  */
 export interface ClustersApiClustersGetRequest {
+    /**
+     * The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+     * @type {number}
+     * @memberof ClustersApiClustersGet
+     */
+    readonly limit?: number
+
+    /**
+     * The first element to return. Use together with \&#39;limit\&#39; for pagination.
+     * @type {number}
+     * @memberof ClustersApiClustersGet
+     */
+    readonly offset?: number
+
     /**
      * Response filter to list only the PostgreSQL clusters that contain the specified name. The value is case insensitive and matched on the \&#39;displayName\&#39; field. 
      * @type {string}
@@ -761,7 +795,7 @@ export class ClustersApi extends BaseAPI {
      * @memberof ClustersApi
      */
     public clustersGet(requestParameters: ClustersApiClustersGetRequest = {}, options?: any) {
-        return ClustersApiFp(this.configuration).clustersGet(requestParameters.filterName, options).then((request) => request(this.axios, this.basePath));
+        return ClustersApiFp(this.configuration).clustersGet(requestParameters.limit, requestParameters.offset, requestParameters.filterName, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

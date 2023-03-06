@@ -23,6 +23,7 @@ export enum State {
     Available = 'AVAILABLE',
     Busy = 'BUSY',
     Destroying = 'DESTROYING',
+    Degraded = 'DEGRADED',
     Failed = 'FAILED',
     Unknown = 'UNKNOWN'
 }

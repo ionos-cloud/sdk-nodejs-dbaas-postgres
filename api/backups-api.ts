@@ -34,10 +34,12 @@ export const BackupsApiAxiosParamCreator = function (configuration?: Configurati
          * Retrieves a list of all backups of the given PostgreSQL cluster.
          * @summary List backups of cluster
          * @param {string} clusterId The unique ID of the cluster.
+         * @param {number} [limit] The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+         * @param {number} [offset] The first element to return. Use together with \&#39;limit\&#39; for pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        clusterBackupsGet: async (clusterId: string, options: any = {}): Promise<RequestArgs> => {
+        clusterBackupsGet: async (clusterId: string, limit?: number, offset?: number, options: any = {}): Promise<RequestArgs> => {
             if (clusterId === null || clusterId === undefined) {
                 throw new RequiredError('clusterId','Required parameter clusterId was null or undefined when calling clusterBackupsGet.');
             }
@@ -66,6 +68,20 @@ export const BackupsApiAxiosParamCreator = function (configuration?: Configurati
                     ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
                 localVarHeaderParameter["Authorization"] = "Bearer " + localVarApiKeyValue;
+            }
+
+            if ((limit === undefined) && (configuration !== undefined)) {
+                limit = configuration.getDefaultParamValue('limit');
+            }
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if ((offset === undefined) && (configuration !== undefined)) {
+                offset = configuration.getDefaultParamValue('offset');
+            }
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
             }
 
 
@@ -147,10 +163,12 @@ export const BackupsApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * Retrieves a list of all PostgreSQL cluster backups.
          * @summary List cluster backups
+         * @param {number} [limit] The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+         * @param {number} [offset] The first element to return. Use together with \&#39;limit\&#39; for pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        clustersBackupsGet: async (options: any = {}): Promise<RequestArgs> => {
+        clustersBackupsGet: async (limit?: number, offset?: number, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/clusters/backups`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
@@ -175,6 +193,20 @@ export const BackupsApiAxiosParamCreator = function (configuration?: Configurati
                     ? await configuration.apiKey("Authorization")
                     : await configuration.apiKey;
                 localVarHeaderParameter["Authorization"] = "Bearer " + localVarApiKeyValue;
+            }
+
+            if ((limit === undefined) && (configuration !== undefined)) {
+                limit = configuration.getDefaultParamValue('limit');
+            }
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if ((offset === undefined) && (configuration !== undefined)) {
+                offset = configuration.getDefaultParamValue('offset');
+            }
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
             }
 
 
@@ -209,11 +241,13 @@ export const BackupsApiFp = function(configuration?: Configuration) {
          * Retrieves a list of all backups of the given PostgreSQL cluster.
          * @summary List backups of cluster
          * @param {string} clusterId The unique ID of the cluster.
+         * @param {number} [limit] The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+         * @param {number} [offset] The first element to return. Use together with \&#39;limit\&#39; for pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async clusterBackupsGet(clusterId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ClusterBackupList>> {
-            const axiosArgs = await BackupsApiAxiosParamCreator(configuration).clusterBackupsGet(clusterId, options);
+        async clusterBackupsGet(clusterId: string, limit?: number, offset?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ClusterBackupList>> {
+            const axiosArgs = await BackupsApiAxiosParamCreator(configuration).clusterBackupsGet(clusterId, limit, offset, options);
             return runRequest(axiosArgs, configuration);
         },
         /**
@@ -230,11 +264,13 @@ export const BackupsApiFp = function(configuration?: Configuration) {
         /**
          * Retrieves a list of all PostgreSQL cluster backups.
          * @summary List cluster backups
+         * @param {number} [limit] The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+         * @param {number} [offset] The first element to return. Use together with \&#39;limit\&#39; for pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async clustersBackupsGet(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ClusterBackupList>> {
-            const axiosArgs = await BackupsApiAxiosParamCreator(configuration).clustersBackupsGet(options);
+        async clustersBackupsGet(limit?: number, offset?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ClusterBackupList>> {
+            const axiosArgs = await BackupsApiAxiosParamCreator(configuration).clustersBackupsGet(limit, offset, options);
             return runRequest(axiosArgs, configuration);
         },
     }
@@ -250,11 +286,13 @@ export const BackupsApiFactory = function (configuration?: Configuration, basePa
          * Retrieves a list of all backups of the given PostgreSQL cluster.
          * @summary List backups of cluster
          * @param {string} clusterId The unique ID of the cluster.
+         * @param {number} [limit] The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+         * @param {number} [offset] The first element to return. Use together with \&#39;limit\&#39; for pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        clusterBackupsGet(clusterId: string, options?: any): AxiosPromise<ClusterBackupList> {
-            return BackupsApiFp(configuration).clusterBackupsGet(clusterId, options).then((request) => request(axios, basePath));
+        clusterBackupsGet(clusterId: string, limit?: number, offset?: number, options?: any): AxiosPromise<ClusterBackupList> {
+            return BackupsApiFp(configuration).clusterBackupsGet(clusterId, limit, offset, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieve a PostgreSQL cluster backup by using its ID. This value can be found when you GET a list of PostgreSQL cluster backups. 
@@ -269,11 +307,13 @@ export const BackupsApiFactory = function (configuration?: Configuration, basePa
         /**
          * Retrieves a list of all PostgreSQL cluster backups.
          * @summary List cluster backups
+         * @param {number} [limit] The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+         * @param {number} [offset] The first element to return. Use together with \&#39;limit\&#39; for pagination.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        clustersBackupsGet(options?: any): AxiosPromise<ClusterBackupList> {
-            return BackupsApiFp(configuration).clustersBackupsGet(options).then((request) => request(axios, basePath));
+        clustersBackupsGet(limit?: number, offset?: number, options?: any): AxiosPromise<ClusterBackupList> {
+            return BackupsApiFp(configuration).clustersBackupsGet(limit, offset, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -290,6 +330,20 @@ export interface BackupsApiClusterBackupsGetRequest {
      * @memberof BackupsApiClusterBackupsGet
      */
     readonly clusterId: string
+
+    /**
+     * The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+     * @type {number}
+     * @memberof BackupsApiClusterBackupsGet
+     */
+    readonly limit?: number
+
+    /**
+     * The first element to return. Use together with \&#39;limit\&#39; for pagination.
+     * @type {number}
+     * @memberof BackupsApiClusterBackupsGet
+     */
+    readonly offset?: number
 }
 
 /**
@@ -304,6 +358,27 @@ export interface BackupsApiClustersBackupsFindByIdRequest {
      * @memberof BackupsApiClustersBackupsFindById
      */
     readonly backupId: string
+}
+
+/**
+ * Request parameters for clustersBackupsGet operation in BackupsApi.
+ * @export
+ * @interface BackupsApiClustersBackupsGetRequest
+ */
+export interface BackupsApiClustersBackupsGetRequest {
+    /**
+     * The maximum number of elements to return. Use together with \&#39;offset\&#39; for pagination.
+     * @type {number}
+     * @memberof BackupsApiClustersBackupsGet
+     */
+    readonly limit?: number
+
+    /**
+     * The first element to return. Use together with \&#39;limit\&#39; for pagination.
+     * @type {number}
+     * @memberof BackupsApiClustersBackupsGet
+     */
+    readonly offset?: number
 }
 
 /**
@@ -322,7 +397,7 @@ export class BackupsApi extends BaseAPI {
      * @memberof BackupsApi
      */
     public clusterBackupsGet(requestParameters: BackupsApiClusterBackupsGetRequest, options?: any) {
-        return BackupsApiFp(this.configuration).clusterBackupsGet(requestParameters.clusterId, options).then((request) => request(this.axios, this.basePath));
+        return BackupsApiFp(this.configuration).clusterBackupsGet(requestParameters.clusterId, requestParameters.limit, requestParameters.offset, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -340,11 +415,12 @@ export class BackupsApi extends BaseAPI {
     /**
      * Retrieves a list of all PostgreSQL cluster backups.
      * @summary List cluster backups
+     * @param {BackupsApiClustersBackupsGetRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BackupsApi
      */
-    public clustersBackupsGet(options?: any) {
-        return BackupsApiFp(this.configuration).clustersBackupsGet(options).then((request) => request(this.axios, this.basePath));
+    public clustersBackupsGet(requestParameters: BackupsApiClustersBackupsGetRequest = {}, options?: any) {
+        return BackupsApiFp(this.configuration).clustersBackupsGet(requestParameters.limit, requestParameters.offset, options).then((request) => request(this.axios, this.basePath));
     }
 }

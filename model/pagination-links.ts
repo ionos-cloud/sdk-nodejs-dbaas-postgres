@@ -15,7 +15,7 @@
 
 
 /**
- * URLs to navigate the different pages. As of now we always only return a single page. 
+ * URLs to navigate the different pages. 
  * @export
  * @interface PaginationLinks
  */
