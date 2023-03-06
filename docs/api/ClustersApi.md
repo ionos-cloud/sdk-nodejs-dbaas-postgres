@@ -240,7 +240,7 @@ api_instance
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **clusterId** | **string** | The unique ID of the cluster. | [default to undefined] |
-| **patchClusterRequest** | [**PatchClusterRequest**](../models/PatchClusterRequest.md) | The modified cluster. |  |
+| **patchClusterRequest** | [**PatchClusterRequest**](../models/PatchClusterRequest.md) | Part of the cluster which should be modified. |  |
 
 ### Return type
 

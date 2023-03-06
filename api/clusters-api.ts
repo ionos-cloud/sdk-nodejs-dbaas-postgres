@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * IONOS DBaaS REST API
- * An enterprise-grade Database is provided as a Service (DBaaS) solution that can be managed through a browser-based \"Data Center Designer\" (DCD) tool or via an easy to use API.  The API allows you to create additional database clusters or modify existing ones. It is designed to allow users to leverage the same power and flexibility found within the DCD visual tool. Both tools are consistent with their concepts and lend well to making the experience smooth and intuitive. 
+ * IONOS DBaaS PostgreSQL REST API
+ * An enterprise-grade Database is provided as a Service (DBaaS) solution that can be managed through a browser-based \"Data Center Designer\" (DCD) tool or via an easy to use API.  The API allows you to create additional PostgreSQL database clusters or modify existing ones. It is designed to allow users to leverage the same power and flexibility found within the DCD visual tool. Both tools are consistent with their concepts and lend well to making the experience smooth and intuitive. 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -271,7 +271,7 @@ export const ClustersApiAxiosParamCreator = function (configuration?: Configurat
          * Patch attributes of a PostgreSQL cluster.
          * @summary Patch a cluster
          * @param {string} clusterId The unique ID of the cluster.
-         * @param {PatchClusterRequest} patchClusterRequest The modified cluster.
+         * @param {PatchClusterRequest} patchClusterRequest Part of the cluster which should be modified.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -507,7 +507,7 @@ export const ClustersApiFp = function(configuration?: Configuration) {
          * Patch attributes of a PostgreSQL cluster.
          * @summary Patch a cluster
          * @param {string} clusterId The unique ID of the cluster.
-         * @param {PatchClusterRequest} patchClusterRequest The modified cluster.
+         * @param {PatchClusterRequest} patchClusterRequest Part of the cluster which should be modified.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -589,7 +589,7 @@ export const ClustersApiFactory = function (configuration?: Configuration, baseP
          * Patch attributes of a PostgreSQL cluster.
          * @summary Patch a cluster
          * @param {string} clusterId The unique ID of the cluster.
-         * @param {PatchClusterRequest} patchClusterRequest The modified cluster.
+         * @param {PatchClusterRequest} patchClusterRequest Part of the cluster which should be modified.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -688,7 +688,7 @@ export interface ClustersApiClustersPatchRequest {
     readonly clusterId: string
 
     /**
-     * The modified cluster.
+     * Part of the cluster which should be modified.
      * @type {PatchClusterRequest}
      * @memberof ClustersApiClustersPatch
      */
