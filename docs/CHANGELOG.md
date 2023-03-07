@@ -4,6 +4,21 @@ An enterprise-grade Database is provided as a Service (DBaaS) solution that can 
 
 The API allows you to create additional database clusters or modify existing ones. It is designed to allow users to leverage the same power and flexibility found within the DCD visual tool. Both tools are consistent with their concepts and lend well to making the experience smooth and intuitive.
 
+## 1.1.1 \(March, 2023\)
+### Features
+* added new state for clusters: `DEGRADED`
+* added new parameters: `limit` and `offset`
+
+## 1.1.0 \(March, 2023\)
+
+### Features
+
+* added new property for clusters: `dns_name`
+
+### Documentation
+
+* generate the documentation automatically
+
 ## 1.0.1 \(May 18th, 2022\)
 
 ### Enhancements:
