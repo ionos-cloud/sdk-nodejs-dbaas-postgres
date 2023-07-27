@@ -13,8 +13,8 @@
  */
 
 
+import { ClusterMetadata } from './cluster-metadata';
 import { ClusterProperties } from './cluster-properties';
-import { Metadata } from './metadata';
 import { ResourceType } from './resource-type';
 
 /**
@@ -40,10 +40,10 @@ export interface ClusterResponse {
 
     /**
      * 
-     * @type {Metadata}
+     * @type {ClusterMetadata}
      * @memberof ClusterResponse
      */
-    metadata?: Metadata;
+    metadata?: ClusterMetadata;
 
     /**
      * 
@@ -52,5 +52,11 @@ export interface ClusterResponse {
      */
     properties?: ClusterProperties;
 }
+
+
+
+
+
+
 
 

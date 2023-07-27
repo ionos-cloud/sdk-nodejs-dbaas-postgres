@@ -15,7 +15,7 @@
 
 import { ClusterListAllOf } from './cluster-list-all-of';
 import { ClusterResponse } from './cluster-response';
-import { Pagination } from './pagination';
+import { DeprecatedPagination } from './deprecated-pagination';
 import { PaginationLinks } from './pagination-links';
 import { ResourceType } from './resource-type';
 
@@ -24,7 +24,7 @@ import { ResourceType } from './resource-type';
  * List of clusters.
  * @export
  */
-export type ClusterList = ClusterListAllOf & Pagination;
+export type ClusterList = ClusterListAllOf & DeprecatedPagination;
 
 
 

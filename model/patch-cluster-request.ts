@@ -13,7 +13,7 @@
  */
 
 
-import { Metadata } from './metadata';
+import { ClusterMetadata } from './cluster-metadata';
 import { PatchClusterProperties } from './patch-cluster-properties';
 
 /**
@@ -25,10 +25,10 @@ export interface PatchClusterRequest {
 
     /**
      * 
-     * @type {Metadata}
+     * @type {ClusterMetadata}
      * @memberof PatchClusterRequest
      */
-    metadata?: Metadata;
+    metadata?: ClusterMetadata;
 
     /**
      * 

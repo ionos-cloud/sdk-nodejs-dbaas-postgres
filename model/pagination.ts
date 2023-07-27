@@ -16,7 +16,7 @@
 import { PaginationLinks } from './pagination-links';
 
 /**
- * 
+ * Pagination information in list responses.
  * @export
  * @interface Pagination
  */
@@ -41,7 +41,7 @@ export interface Pagination {
      * @type {PaginationLinks}
      * @memberof Pagination
      */
-    links?: PaginationLinks;
+    _links?: PaginationLinks;
 }
 
 

@@ -16,9 +16,11 @@
 
 export * from './api/backups-api';
 export * from './api/clusters-api';
+export * from './api/databases-api';
 export * from './api/logs-api';
 export * from './api/metadata-api';
 export * from './api/restores-api';
+export * from './api/users-api';
 
 
 export * from './api/wait-for-request';

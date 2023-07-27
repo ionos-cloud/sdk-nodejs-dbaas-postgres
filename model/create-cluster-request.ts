@@ -13,8 +13,8 @@
  */
 
 
+import { ClusterMetadata } from './cluster-metadata';
 import { CreateClusterProperties } from './create-cluster-properties';
-import { Metadata } from './metadata';
 
 /**
  * Request payload with all data needed to create a new PostgreSQL cluster. 
@@ -25,10 +25,10 @@ export interface CreateClusterRequest {
 
     /**
      * 
-     * @type {Metadata}
+     * @type {ClusterMetadata}
      * @memberof CreateClusterRequest
      */
-    metadata?: Metadata;
+    metadata?: ClusterMetadata;
 
     /**
      * 

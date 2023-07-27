@@ -120,7 +120,7 @@ export class Configuration {
         this.maxRetries = DEFAULT_MAX_RETRIES;
         this.maxWaitTime = DEFAULT_MAX_WAIT_TIME;
         this.debug = false;
-        this.setUserAgent('ionos-cloud-sdk-node-dbaas-postgres/v1.1.1');
+        this.setUserAgent('ionos-cloud-sdk-node-dbaas-postgres/v1.2.0');
     }
 
     static fromEnv(): Configuration {

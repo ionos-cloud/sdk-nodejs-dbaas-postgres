@@ -13,63 +13,62 @@
  */
 
 
-import { State } from './state';
 
 /**
- * Metadata of the resource.
+ * 
  * @export
  * @interface Metadata
  */
 export interface Metadata {
 
     /**
-     * The ISO 8601 creation timestamp.
-     * @type {string}
-     * @memberof Metadata
-     */
-    createdDate?: string;
-
-    /**
-     * 
+     * The URN of an IAM user.
      * @type {string}
      * @memberof Metadata
      */
     createdBy?: string;
 
     /**
-     * 
+     * The ID of an IAM user.
      * @type {string}
      * @memberof Metadata
      */
     createdByUserId?: string;
 
     /**
-     * The ISO 8601 modified timestamp.
+     * An ISO 8601 timestamp.
      * @type {string}
      * @memberof Metadata
      */
-    lastModifiedDate?: string;
+    createdDate?: string;
 
     /**
-     * 
+     * The URN of an IAM user.
      * @type {string}
      * @memberof Metadata
      */
     lastModifiedBy?: string;
 
     /**
-     * 
+     * The ID of an IAM user.
      * @type {string}
      * @memberof Metadata
      */
     lastModifiedByUserId?: string;
 
     /**
-     * 
-     * @type {State}
+     * An ISO 8601 timestamp.
+     * @type {string}
      * @memberof Metadata
      */
-    state?: State;
+    lastModifiedDate?: string;
+
+    /**
+     * The URN of the resource.
+     * @type {string}
+     * @memberof Metadata
+     */
+    resourceURN?: string;
 }
 
 

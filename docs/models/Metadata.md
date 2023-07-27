@@ -1,15 +1,14 @@
 # Metadata
 
-Metadata of the resource.
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **createdDate** | **string** | The ISO 8601 creation timestamp. | [optional] [default to undefined] |
-| **createdBy** | **string** |  | [optional] [default to undefined] |
-| **createdByUserId** | **string** |  | [optional] [default to undefined] |
-| **lastModifiedDate** | **string** | The ISO 8601 modified timestamp. | [optional] [default to undefined] |
-| **lastModifiedBy** | **string** |  | [optional] [default to undefined] |
-| **lastModifiedByUserId** | **string** |  | [optional] [default to undefined] |
-| **state** | [**State**](State.md) |  | [optional] [default to undefined] |
+| **createdBy** | **string** | The URN of an IAM user. | [optional] [default to undefined] |
+| **createdByUserId** | **string** | The ID of an IAM user. | [optional] [default to undefined] |
+| **createdDate** | **string** | An ISO 8601 timestamp. | [optional] [default to undefined] |
+| **lastModifiedBy** | **string** | The URN of an IAM user. | [optional] [default to undefined] |
+| **lastModifiedByUserId** | **string** | The ID of an IAM user. | [optional] [default to undefined] |
+| **lastModifiedDate** | **string** | An ISO 8601 timestamp. | [optional] [default to undefined] |
+| **resourceURN** | **string** | The URN of the resource. | [optional] [default to undefined] |
 
 

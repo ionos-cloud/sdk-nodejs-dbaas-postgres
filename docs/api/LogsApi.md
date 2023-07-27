@@ -29,7 +29,7 @@ const api_instance = new ionoscloud.LogsApi(config);
 // Get logs of your cluster
 api_instance
   .clusterLogsGet({
-    clusterId: clusterId_example,
+    clusterId: 498ae72f-411f-11eb-9d07-046c59cc737e,
     start: 2013-10-20T19:20:30+01:00,
     end: 2013-10-20T19:20:30+01:00,
     direction: direction_example,

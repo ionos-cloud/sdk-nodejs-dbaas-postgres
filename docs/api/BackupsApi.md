@@ -31,7 +31,7 @@ const api_instance = new ionoscloud.BackupsApi(config);
 // List backups of cluster
 api_instance
   .clusterBackupsGet({
-    clusterId: clusterId_example,
+    clusterId: 498ae72f-411f-11eb-9d07-046c59cc737e,
     limit: 100,
     offset: 200, 
     options: {}
@@ -84,7 +84,7 @@ const api_instance = new ionoscloud.BackupsApi(config);
 // Fetch a cluster backup
 api_instance
   .clustersBackupsFindById({
-    backupId: backupId_example
+    backupId: 498ae72f-411f-11eb-9d07-046c59cc737e-4oymiqu-12
   })
   .then((response) => console.log(response.data))
   .catch((error) => console.log(error.response.data));

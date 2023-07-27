@@ -13,27 +13,21 @@
  */
 
 
+import { DatabaseProperties } from './database-properties';
 
 /**
  * 
  * @export
- * @interface ClusterLogsMessages
+ * @interface Database
  */
-export interface ClusterLogsMessages {
+export interface Database {
 
     /**
      * 
-     * @type {string}
-     * @memberof ClusterLogsMessages
+     * @type {DatabaseProperties}
+     * @memberof Database
      */
-    time?: string;
-
-    /**
-     * 
-     * @type {string}
-     * @memberof ClusterLogsMessages
-     */
-    message?: string;
+    properties: DatabaseProperties;
 }
 
 

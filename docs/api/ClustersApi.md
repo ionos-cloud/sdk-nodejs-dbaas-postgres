@@ -35,7 +35,7 @@ const api_instance = new ionoscloud.ClustersApi(config);
 // List PostgreSQL versions
 api_instance
   .clusterPostgresVersionsGet({
-    clusterId: clusterId_example
+    clusterId: 498ae72f-411f-11eb-9d07-046c59cc737e
   })
   .then((response) => console.log(response.data))
   .catch((error) => console.log(error.response.data));
@@ -83,7 +83,7 @@ const api_instance = new ionoscloud.ClustersApi(config);
 // Delete a cluster
 api_instance
   .clustersDelete({
-    clusterId: clusterId_example
+    clusterId: 498ae72f-411f-11eb-9d07-046c59cc737e
   })
   .then((response) => console.log(response.data))
   .catch((error) => console.log(error.response.data));
@@ -131,7 +131,7 @@ const api_instance = new ionoscloud.ClustersApi(config);
 // Fetch a cluster
 api_instance
   .clustersFindById({
-    clusterId: clusterId_example
+    clusterId: 498ae72f-411f-11eb-9d07-046c59cc737e
   })
   .then((response) => console.log(response.data))
   .catch((error) => console.log(error.response.data));
@@ -232,7 +232,7 @@ const api_instance = new ionoscloud.ClustersApi(config);
 // Patch a cluster
 api_instance
   .clustersPatch({
-    clusterId: clusterId_example,
+    clusterId: 498ae72f-411f-11eb-9d07-046c59cc737e,
     patchClusterRequest: patchClusterRequest_example
   })
   .then((response) => console.log(response.data))

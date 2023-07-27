@@ -15,7 +15,7 @@
 
 import { BackupResponse } from './backup-response';
 import { ClusterBackupListAllOf } from './cluster-backup-list-all-of';
-import { Pagination } from './pagination';
+import { DeprecatedPagination } from './deprecated-pagination';
 import { PaginationLinks } from './pagination-links';
 import { ResourceType } from './resource-type';
 
@@ -24,7 +24,7 @@ import { ResourceType } from './resource-type';
  * List of backups.
  * @export
  */
-export type ClusterBackupList = ClusterBackupListAllOf & Pagination;
+export type ClusterBackupList = ClusterBackupListAllOf & DeprecatedPagination;
 
 
 

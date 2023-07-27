@@ -22,7 +22,9 @@
 export enum ResourceType {
     Collection = 'collection',
     Cluster = 'cluster',
-    Backup = 'backup'
+    Backup = 'backup',
+    User = 'user',
+    Database = 'database'
 }
 
 

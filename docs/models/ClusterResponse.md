@@ -6,7 +6,7 @@ A database cluster.
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**ResourceType**](ResourceType.md) |  | [optional] [default to undefined] |
 | **id** | **string** | The unique ID of the resource. | [optional] [default to undefined] |
-| **metadata** | [**Metadata**](Metadata.md) |  | [optional] [default to undefined] |
+| **metadata** | [**ClusterMetadata**](ClusterMetadata.md) |  | [optional] [default to undefined] |
 | **properties** | [**ClusterProperties**](ClusterProperties.md) |  | [optional] [default to undefined] |
 
 

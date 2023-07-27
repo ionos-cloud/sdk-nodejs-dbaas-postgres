@@ -13,7 +13,7 @@
  */
 
 
-import { ClusterLogsMessages } from './cluster-logs-messages';
+import { ClusterLogsInstancesMessages } from './cluster-logs-instances-messages';
 
 /**
  * 
@@ -31,10 +31,10 @@ export interface ClusterLogsInstances {
 
     /**
      * 
-     * @type {Array<ClusterLogsMessages>}
+     * @type {Array<ClusterLogsInstancesMessages>}
      * @memberof ClusterLogsInstances
      */
-    messages?: Array<ClusterLogsMessages>;
+    messages?: Array<ClusterLogsInstancesMessages>;
 }
 
 

@@ -29,7 +29,7 @@ const api_instance = new ionoscloud.RestoresApi(config);
 // In-place restore of a cluster
 api_instance
   .clusterRestorePost({
-    clusterId: clusterId_example,
+    clusterId: 498ae72f-411f-11eb-9d07-046c59cc737e,
     createRestoreRequest: createRestoreRequest_example
   })
   .then((response) => console.log(response.data))
