@@ -76,7 +76,7 @@ The IONOS Cloud SDK for Nodejs DBaaS Postgres aims to offer access to all resour
 * Authentication for API calls
 * Asynchronous request handling 
 
-## FAQ
+## FAQ 
 
 1. How can I open a bug report/feature request? 
 
